@@ -21,5 +21,7 @@ public class MyWorld extends World
         Sea seea = new Sea();
         addObject(seea, 50, 100);
         addObject(seeeeel, 69, 69);
+        Cherry cheery = new Cherry();
+        addObject(cheery, 500,90);
     }
 }
