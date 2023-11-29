@@ -14,6 +14,7 @@ public class Cherry extends Actor
      */
     public void act() 
     {
-        move(1);
+        setLocation(getX(), getY() + 2);
+        
     }    
 }
