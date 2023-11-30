@@ -1,4 +1,4 @@
-
+p
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -23,4 +23,11 @@ public class Seal extends Actor
         }
   
     }
+    private void eat() {
+        if(isTouching(Apple.class)) {
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnApple();
+            world.increaseScore();
+        }
 }

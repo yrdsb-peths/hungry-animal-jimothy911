@@ -16,5 +16,11 @@ public class Cherry extends Actor
     {
         setLocation(getX(), getY() + 2);
         
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() > world.getHeight()){
+            
+            world.removeObject(this);
+        }
+        
     }    
 }
