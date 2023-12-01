@@ -1,19 +1,64 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+
 /**
- * Write a description of class Label here.
+ * A Label class that allows you to display a textual value on screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The Label is an actor, so you will need to create it, and then add it to the world
+ * in Greenfoot.  If you keep a reference to the Label then you can change the text it
+ * displays.  
+ *
+ * @author Amjad Altadmri 
+ * @version 1.1
  */
 public class Label extends Actor
 {
-    /**
-     * Act - do whatever the Label wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    private String value;
+    private int fontSize;
+    private Color lineColor = Color.BLACK;
+    private Color fillColor = Color.WHITE;
+    
+    private static final Color transparent = new Color(0,0,0,0);
+
+    public Label(int value, int fontSize)
     {
-        // Add your action code here.
-    }    
+        this(Integer.toString(value), fontSize);
+    }
+
+    public Label(String value, int fontSize)
+    {
+        this.value = value;
+        this.fontSize = fontSize;
+        updateImage();
+    }
+
+    public void setValue(String value)
+    {
+        this.value = value;
+        updateImage();
+    }
+
+    public void setValue(int value)
+    {
+        this.value = Integer.toString(value);
+        updateImage();
+    }
+    
+
+    public void setLineColor(Color lineColor)
+    {
+        this.lineColor = lineColor;
+        updateImage();
+    }
+    
+    public void setFillColor(Color fillColor)
+    {
+        this.fillColor = fillColor;
+        updateImage();
+    }
+    
+    private void updateImage()
+    {
+        setImage(new GreenfootImage(value, fontSize, fillColor, transparent, lineColor));
+    }
 }

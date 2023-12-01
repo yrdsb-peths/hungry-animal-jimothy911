@@ -21,13 +21,15 @@ public class Seal extends Actor
         if(Greenfoot.isKeyDown("d")){
             move(2);
         }
+        eat();
   
     }
     private void eat() {
-        if(isTouching(Apple.class)) {
-            removeTouching(Apple.class);
+        if(isTouching(Cherry.class)) {
+            removeTouching(Cherry.class);
             MyWorld world = (MyWorld) getWorld();
-            world.spawnApple();
+            world.spawnCherry();
             world.increaseScore();
         }
+    }
 }

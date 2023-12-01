@@ -13,14 +13,13 @@ public class Cherry extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+   {
         setLocation(getX(), getY() + 2);
         
         MyWorld world = (MyWorld) getWorld();
         if(getY() > world.getHeight()){
-            
+            world.gameOver();
             world.removeObject(this);
         }
-        
-    }    
+   }  
 }
