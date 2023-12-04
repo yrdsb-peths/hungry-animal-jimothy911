@@ -1,4 +1,3 @@
-p
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -21,6 +20,7 @@ public class Seal extends Actor
         if(Greenfoot.isKeyDown("d")){
             move(2);
         }
+        
         eat();
   
     }

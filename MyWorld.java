@@ -36,10 +36,10 @@ public class MyWorld extends World
         scoreLabel.setValue(score);
     }
     
-    public void spawnApple() {
+    public void spawnCherry() {
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        Apple apple = new Apple();
-        addObject(apple, x, y);
+        Cherry cherry = new Cherry();
+        addObject(cherry, x, y);
     }
 }
