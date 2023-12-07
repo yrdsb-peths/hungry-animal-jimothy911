@@ -15,13 +15,14 @@ public class Seal extends Actor
     public void act()
     {
         if(Greenfoot.isKeyDown("a")){
-            move(-2);
+            move(-20);
         }
         if(Greenfoot.isKeyDown("d")){
-            move(2);
+            move(10);
         }
         
         eat();
+        munch();
   
     }
     private void eat() {
@@ -30,6 +31,14 @@ public class Seal extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnCherry();
             world.increaseScore();
+        }
+    }
+    private void munch() {
+        if(isTouching(Baby.class)) {
+            removeTouching(Baby.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnBaby();
+            world.decreaseScore();
         }
     }
 }

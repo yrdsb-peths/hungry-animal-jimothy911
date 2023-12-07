@@ -20,6 +20,7 @@ public class MyWorld extends World
         Seal seal = new Seal();
         addObject(seal, 300, 300);
         spawnCherry();
+        spawnBaby();
         
         scoreLabel = new Label(score, 70);
         addObject(scoreLabel, 50, 50);
@@ -35,11 +36,21 @@ public class MyWorld extends World
         score = score + 1;
         scoreLabel.setValue(score);
     }
+    public void decreaseScore() {
+        score = score - 3;
+        scoreLabel.setValue(score);
+    }
     
     public void spawnCherry() {
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         Cherry cherry = new Cherry();
         addObject(cherry, x, y);
+    }
+    public void spawnBaby() {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        Baby baby = new Baby();
+        addObject(baby, x, y);
     }
 }
